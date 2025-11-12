@@ -1,0 +1,240 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            /* margin: 0; */
+            overflow-x: hidden;
+        }
+
+        body {
+            padding: 50px;
+        }
+
+        .grid-container {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(5, 100px);
+            gap: 70px;
+        }
+
+
+        .cell {
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow:
+            -8px -8px rgb(240, 240, 189),
+            -15px -15px rgba(246, 186, 209, 0.973);
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+
+        .cell1 {
+            grid-column: span 2;
+            grid-row: 1 / 6;
+            background: url(https://i.pinimg.com/736x/fa/13/78/fa1378c01f7aec20bd540e29d5051213.jpg);
+            background-repeat: no-repeat;
+            /* background-size: 130%; */
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .cell2 {
+            background-repeat: no-repeat;
+            grid-column: span 3;
+            grid-row: 1 / 3;
+            background: url(https://i.pinimg.com/736x/0f/c0/2e/0fc02eccc72061b5969fefa8969a52d4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            /* rotate: 90deg; */
+
+        }
+
+        .cell3 {
+            background-repeat: no-repeat;
+            grid-column: 3 / span 2;
+            grid-row: 3 / 6;
+            background: url(https://i.pinimg.com/736x/a0/60/31/a06031f3d08ddda86466be5ac419c28f.jpg);
+            background-repeat: no-repeat;
+            background-size:cover;
+
+        }
+
+        .cell4 {
+            background-repeat: no-repeat;
+            grid-column: 5 / 6;
+            grid-row: 3;
+            background: url(https://i.pinimg.com/736x/65/cd/29/65cd29dc5bc2cde9fbcc489fc0f177a7.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .cell5 {
+            grid-column: 6 / span 2;
+            grid-row: 1 / span 3;
+            background: url(https://i.pinimg.com/736x/c8/6d/5e/c86d5e5c7eaf4d3f6c2dc35965422d5a.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            background-position: center;
+
+        }
+
+        .cell6 {
+            grid-column: span 3;
+            grid-row: 4 / 6;
+            background: url(https://i.pinimg.com/736x/fb/d3/39/fbd339ffc4263127d00d93296a3eefa5.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* overflow: hidden; */
+
+        }
+
+
+
+        .overlay-text {
+            transform: translateY(190px);
+            width: 100%;
+            height: 30%;
+
+            /* margin-top: ; */
+            background: linear-gradient(rgba(128, 128, 128, 0.533), rgba(0, 0, 0, 0.582));
+            position: absolute;
+            bottom: 0px;
+            border-radius: 15px;
+            padding-left: 20px;
+            padding-top: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: all 0.8s ease-in;
+
+        }
+
+        .overlay-text-4 {
+            padding: 5px;
+            height: 100%;
+            transform: translateY(250px);
+        }
+
+        .overlay-text-2 {
+            height: 75%;
+            transform: translateY(170px);
+        }
+
+        .overlay-text-3 {
+            height: 50%;
+            transform: translateY(185px);
+        }
+
+        .overlay-text h2 {
+            font-size: 2rem;
+            padding-bottom: 20px;
+            color: rgb(255, 224, 249);
+        }
+
+        .overlay-text-4 h2 {
+            font-size: 0.9rem;
+        }
+
+        .cell:hover>.overlay-text {
+            transform: translateY(0px);
+        }
+
+        .cell:hover>.overlay-text-4 {
+            transform: translateY(-5px);
+        }
+
+
+
+        .overlay-text .btns {
+            display: flex;
+            gap: 10px;
+
+        }
+
+        .overlay-text .btns a {
+            width: 100%;
+
+        }
+
+        .overlay-text .btns input[type="submit"] {
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-transform: capitalize;
+            font-weight: 600;
+            border: none;
+            width: 90%;
+            border: 5px solid rgb(164, 162, 221);
+            background-color: lightgoldenrodyellow;
+            cursor: pointer;
+        }
+
+        .overlay-text-4 .btns input[type="submit"] {
+            font-size: 0.5rem;
+            padding: 5px;
+            width: 90%;
+        }
+
+        @media(max-width: 1024px) {
+            .grid-container {
+                gap: 60px;
+                grid-template-areas:
+                    "a a a a b b b"
+                    "a a a a b b b"
+                    "c c d d b b b"
+                    "c c d d b b b"
+                    "e e e f f f f"
+                    "e e e f f f f";
+            }
+
+            .cell1 {
+                grid-area: a;
+            }
+
+            .cell2 {
+                grid-area: b;
+            }
+
+            .cell3 {
+                grid-area: c;
+            }
+
+            .cell4 {
+                grid-area: d;
+            }
+
+            .cell5 {
+                grid-area: e;
+            }
+
+            .cell6 {
+                grid-area: f;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .grid-container {
+                gap: 30px;
+                grid-template-areas:
+                    "a a a b b b b"
+                    "a a a b b b b"
+                    "c c c c d d d"
+                    "c c c c d d d"
+                    "e e e f f f f"
+                    "e e e f f f f";
+            }
+        }
